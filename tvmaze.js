@@ -17,12 +17,12 @@
       }
  */
 
-const missingImageUrl = 'http://tinyurl.com/missing-tv';
+const missingImageUrl = 'https://tinyurl.com/missing-tv';
 
 async function searchShows(query) {
 	// TODO: Make an ajax request to the searchShows api.
 	try {
-		const res = await axios.get('http://api.tvmaze.com/search/shows', { params: { q: query } });
+		const res = await axios.get('https://api.tvmaze.com/search/shows', { params: { q: query } });
 		//console.log(res); //me checking my work
 		return res.data.map((obj) => {
 			//goes over each object in the array of data
@@ -121,7 +121,7 @@ async function handleShowEpisodes(evt) {
  */
 async function getEpisodes(id) {
 	try {
-		let res = await axios.get(`http://api.tvmaze.com/shows/${id}/episodes`);
+		let res = await axios.get(`https://api.tvmaze.com/shows/${id}/episodes`);
 		return res.data.map((obj) => {
 			return {
 				id: obj.id,
